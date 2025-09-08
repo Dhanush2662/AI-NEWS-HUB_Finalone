@@ -1,0 +1,53 @@
+{
+  "name": "ai-news-hub",
+  "version": "1.0.0",
+  "description": "AI-powered news platform integrating multiple AI tools",
+  "private": true,
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start-all": "concurrently \"npm start\" \"npm run start-factcheck-api\" \"npm run start-bias-api\" \"npm run start-summarizer-api\"",
+    "start-factcheck-api": "cd ../Factcheck && python api_server.py",
+    "start-bias-api": "cd ../Biaschecker/news-bias-classifier && python api_server.py",
+    "start-summarizer-api": "cd ../Newssummarizer/AI-News-Summariser && python api_server.py",
+    "start-factcheck": "cd ../Factcheck && python main.py",
+    "start-bias": "cd ../Biaschecker/news-bias-classifier && python app.py",
+    "start-summarizer": "cd ../Newssummarizer/AI-News-Summariser && python app.py"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

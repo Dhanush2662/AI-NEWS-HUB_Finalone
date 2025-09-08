@@ -1,0 +1,506 @@
+.bias-checker {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Service Status Styles */
+.service-status {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.status-label {
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+.status-indicator {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+  margin-right: 12px;
+}
+
+.status-indicator.up {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-indicator.down {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.status-indicator.checking {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.model-info {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.model-name {
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.model-type {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.bias-checker-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.bias-checker-header h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.bias-checker-header p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.bias-checker-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #7f8c8d;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  color: #3498db;
+}
+
+.tab.active {
+  color: #3498db;
+  border-bottom-color: #3498db;
+  font-weight: 600;
+}
+
+.bias-checker-content {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-section {
+  margin-bottom: 20px;
+}
+
+.input-section label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.input-section textarea,
+.input-section input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input-section textarea:focus,
+.input-section input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.input-section textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.analyze-btn {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 20px auto;
+  font-weight: 600;
+}
+
+.analyze-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2980b9, #21618c);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.analyze-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error-message {
+  background: #e74c3c;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.bias-results {
+  margin-top: 30px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.bias-results h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.result-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 25px;
+  border-left: 5px solid #3498db;
+  margin-bottom: 20px;
+}
+
+.result-card h4 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 8px;
+}
+
+/* Political Bias Classification Styles */
+.political-bias-display {
+  margin-bottom: 30px;
+}
+
+.classification-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  border: 2px solid #ecf0f1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.color-indicator {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.political-bias {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  flex: 1;
+}
+
+.confidence-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #ecf0f1;
+}
+
+.confidence-label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.confidence-value {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #3498db;
+}
+
+/* Legend Styles */
+.legend {
+  margin-top: 25px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 1px solid #ecf0f1;
+}
+
+.legend h4 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 8px;
+}
+
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #ecf0f1;
+}
+
+.legend-indicator {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.legend-text {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.bias-category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bias-label {
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.confidence {
+  background: #34495e;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.result-details {
+  display: grid;
+  gap: 15px;
+}
+
+.detail-item {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 15px;
+  align-items: start;
+}
+
+.detail-item strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.detail-item span,
+.detail-item p {
+  color: #34495e;
+  line-height: 1.5;
+}
+
+.detail-item ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #34495e;
+}
+
+.detail-item li {
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+/* Method Display */
+.method-display {
+  margin: 12px 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.method-label {
+  font-weight: 600;
+  margin-right: 8px;
+  min-width: 140px;
+}
+
+.method-value {
+  color: #495057;
+}
+
+/* Keywords Display */
+.keywords-display {
+  margin: 12px 0;
+}
+
+.keywords-label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.keywords-list {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.keywords-list li {
+  background-color: #e9ecef;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+/* Explanation Display */
+.explanation-display {
+  margin: 12px 0;
+}
+
+.explanation-label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.explanation-text {
+  background-color: #f8f9fa;
+  padding: 12px;
+  border-radius: 4px;
+  border-left: 4px solid #6c757d;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .bias-checker {
+    padding: 15px;
+  }
+  
+  .bias-checker-header h1 {
+    font-size: 2rem;
+  }
+  
+  .bias-checker-tabs {
+    flex-direction: column;
+  }
+  
+  .tab {
+    padding: 12px 20px;
+  }
+  
+  .bias-checker-content {
+    padding: 20px;
+  }
+  
+  .bias-category {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .detail-item {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  
+  .analyze-btn {
+    width: 100%;
+    padding: 12px;
+  }
+  
+  /* Mobile styles for political bias layout */
+  .classification-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 15px;
+  }
+  
+  .political-bias {
+    font-size: 1.2rem;
+  }
+  
+  .confidence-display {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+    padding: 12px 15px;
+  }
+  
+  .legend {
+    padding: 15px;
+  }
+  
+  .legend-item {
+    padding: 8px;
+  }
+  
+  .result-card {
+    padding: 15px;
+  }
+}
