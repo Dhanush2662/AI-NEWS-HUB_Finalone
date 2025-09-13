@@ -21,3 +21,62 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+PYTHON*
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# API Keys and Environment Variables
+.env
+*.env
+config.json
+secrets.json
+
+# Model files (large files)
+*.bin
+*.safetensors
+models/
+checkpoints/
+output_dir/
+newsmind_trained_model/

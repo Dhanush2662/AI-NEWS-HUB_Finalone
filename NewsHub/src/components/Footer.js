@@ -16,23 +16,6 @@ const Footer = () => {
               Your intelligent news companion powered by advanced AI technology. 
               Get verified facts, unbiased analysis, and concise summaries all in one place.
             </p>
-            <div className="social-links">
-              <a href="#" className="text-white me-3" aria-label="Facebook">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" className="text-white me-3" aria-label="Twitter">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" className="text-white me-3" aria-label="LinkedIn">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a href="#" className="text-white me-3" aria-label="Instagram">
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a href="#" className="text-white" aria-label="YouTube">
-                <i className="fab fa-youtube"></i>
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -132,7 +115,6 @@ const Footer = () => {
           <div className="col-lg-2 col-md-12 mb-4">
             <h6 className="text-uppercase fw-bold mb-3">Stay Updated</h6>
             <p className="text-light opacity-75 small mb-3">
-              Subscribe to our newsletter for the latest AI news insights.
             </p>
             <form className="newsletter-form">
               <div className="input-group mb-3">
@@ -172,22 +154,22 @@ const Footer = () => {
         <div className="row align-items-center">
           <div className="col-md-6">
             <p className="text-light opacity-50 mb-0 small">
-              © 2024 NewsHub AI. All rights reserved. Powered by advanced artificial intelligence.
+              
             </p>
           </div>
           <div className="col-md-6 text-md-end">
             <div className="footer-links">
               <a href="#" className="text-light opacity-50 text-decoration-none me-3 small hover-primary">
-                Privacy Policy
+                
               </a>
               <a href="#" className="text-light opacity-50 text-decoration-none me-3 small hover-primary">
-                Terms of Service
+                
               </a>
               <a href="#" className="text-light opacity-50 text-decoration-none me-3 small hover-primary">
-                Cookie Policy
+                
               </a>
               <a href="#" className="text-light opacity-50 text-decoration-none small hover-primary">
-                Accessibility
+                
               </a>
             </div>
           </div>
